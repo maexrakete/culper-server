@@ -11,7 +11,7 @@ services:
 script:
   - sudo chmod -R 777 .
   - docker run --rm -it -v "$(pwd)":/home/rust/src mietzekotze/culper-builder cargo test
-  - docker run --rm -it -v "$(pwd)":/home/rust/src mietzekotze/culper-musl-builder cargo build --release
+  - docker run --rm -it -v "$(pwd)":/home/rust/src mietzekotze/culper-builder cargo build --release
   - sudo chmod -R 777 .
 
 after_deploy:
@@ -22,8 +22,7 @@ deploy:
   api_key:
     secure: "dU6ke7zBS3TlIcntBe7Shy2pH/SJ9qiqDHhPR6HrQsGtUHsvGVSkRKs9DzRbITMV65pVVDvQ0uck4EE4ijRW1c24NcROdmvI8x5QOHmyKMdixZO/TEzumwbB7IJ/oKYHJLjb7l3gSd3MWis0tLg9P2Io2wjj6i0Si5r65n/PATtZFELsOC01+aqthQR5z7BH6kDQyvO+5UYlOGO86Q4FOsLmmjurd/9qvmjtAA0ZYBEg/R9mmceBCkiiRy3TIqcyjjCOhZxGyMBpAAHqoaRE9wBXe7Gb/SiTEo9F694d+dpfpcIBtIbdkvZynUMmEk4fXSI3P1zdXfRDQRC/ZfEF76VPECu6Yju7KyCjS+91XfMznUCcZMonCeLnfUSiJ/5D3aOLRKyPBalG/rMfe39/Q5JjYLP96SZ89Jom1Yw7Ve8Mdzzgfm2H1TXHzvoEg+5RoXqTVuxDkzx34MkgOgtDJE7jkcfbvaeOBfJMojIIvUAMBizDk+4p0Y1K9q3wTdsbw54rjpsKRsjwerL+Ss45qgmY/gEN6rLTnnzJtPIwuU+0zgB3KkSPmr3ITEYkpPoolVDB7YHIo0dyBXLWNlHWauGnSzQrhcqC4LrzpQbmMWxPHvSktJ+OvNZaspZQ+M7APbooSSSJofGWuQCg89tOl8GqsdxtTJiFBFGpyY745Vs="
   file:
-    - "target/x86_64-unknown-linux-musl/release/culper"
-    - "target/x86_64-unknown-linux-musl/release/culper-server"
+    - "target/release/culper-server"
   skip_cleanup: true
   on:
     tags: true 
