@@ -18,7 +18,7 @@ slog-stdlog = "3.0.2"
 chrono = "0.4.6"
 slog-envlogger = "2.1.0"
 log = "0.4.6"
-toml = "0.4.8"
+toml = "0.5.7"
 sequoia = { git = "https://github.com/maexrakete/sequoia.git" }
 clap = "2.32.0"
 failure = "0.1.2"
