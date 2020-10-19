@@ -7,7 +7,7 @@ edition = "2018"
 [dependencies]
 culper-lib = "0.1.0"
 futures = "0.1"
-env_logger = "0.5"
+env_logger = "0.8"
 actix = "0.7"
 actix-web = "0.7"
 slog = "2.4.1"
